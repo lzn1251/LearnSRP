@@ -1,36 +1,34 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class PerObjectMaterialProperties : MonoBehaviour
-{
-    private static int
-        baseColorId = Shader.PropertyToID("_BaseColor"),
-        cutoffId = Shader.PropertyToID("_Cutoff"),
-        metallicId = Shader.PropertyToID("_Metallic"),
-        smoothnessId = Shader.PropertyToID("_Smoothness");
+public class PerObjectMaterialProperties : MonoBehaviour {
 
-    [SerializeField] private Color baseColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+	static int
+		baseColorId = Shader.PropertyToID("_BaseColor"),
+		cutoffId = Shader.PropertyToID("_Cutoff"),
+		metallicId = Shader.PropertyToID("_Metallic"),
+		smoothnessId = Shader.PropertyToID("_Smoothness");
 
-    [SerializeField, Range(0f, 1f)] private float alphaCutoff = 0.5f, metallic = 0f, smoothness = 0.5f;
+	static MaterialPropertyBlock block;
 
-    private static MaterialPropertyBlock _block;
+	[SerializeField]
+	Color baseColor = Color.white;
 
-    private void OnValidate()
-    {
-        if (_block == null)
-        {
-            _block = new MaterialPropertyBlock();
-        }
-        _block.SetColor(baseColorId, baseColor);
-        _block.SetFloat(cutoffId, alphaCutoff);
-        _block.SetFloat(metallicId, metallic);
-        _block.SetFloat(smoothnessId, smoothness);
-        GetComponent<Renderer>().SetPropertyBlock(_block);
-    }
+	[SerializeField, Range(0f, 1f)]
+	float alphaCutoff = 0.5f, metallic = 0f, smoothness = 0.5f;
 
-    private void Awake()
-    {
-        OnValidate();
-    }
+	void Awake () {
+		OnValidate();
+	}
+
+	void OnValidate () {
+		if (block == null) {
+			block = new MaterialPropertyBlock();
+		}
+		block.SetColor(baseColorId, baseColor);
+		block.SetFloat(cutoffId, alphaCutoff);
+		block.SetFloat(metallicId, metallic);
+		block.SetFloat(smoothnessId, smoothness);
+		GetComponent<Renderer>().SetPropertyBlock(block);
+	}
 }

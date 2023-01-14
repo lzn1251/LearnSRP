@@ -1,114 +1,74 @@
-﻿using System;
+﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 
-public partial class CameraRenderer
-{
-    private ScriptableRenderContext _context;
+partial class CameraRenderer {
 
-    private Camera _camera;
+	partial void DrawGizmos ();
 
-    private const string bufferName = "Render Camera";
+	partial void DrawUnsupportedShaders ();
 
-    private CommandBuffer _buffer = new CommandBuffer
-    {
-        name = bufferName
-    };
+	partial void PrepareForSceneWindow ();
 
-    private CullingResults _cullingResults;
+	partial void PrepareBuffer ();
 
-    private static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
-        litShaderTagId = new ShaderTagId("CustomLit");
+#if UNITY_EDITOR
 
-    private Lighting _lighting = new Lighting();
-    
-    
-    public void Render(ScriptableRenderContext context, Camera camera,
-        bool useDynamicBatching, bool useGPUInstancing, ShadowSettings shadowSettings)
-    {
-        this._context = context;
-        this._camera = camera;
+	static ShaderTagId[] legacyShaderTagIds = {
+		new ShaderTagId("Always"),
+		new ShaderTagId("ForwardBase"),
+		new ShaderTagId("PrepassBase"),
+		new ShaderTagId("Vertex"),
+		new ShaderTagId("VertexLMRGBM"),
+		new ShaderTagId("VertexLM")
+	};
 
-        PrepareBuffer();
-        PrepareForSceneWindow();
-        if (!Cull(shadowSettings.maxDistance))
-        {
-            return;
-        }
-        
-        _buffer.BeginSample(SampleName);
-        ExecuteBuffer();
-        _lighting.Setup(context, _cullingResults, shadowSettings);
-        _buffer.EndSample(SampleName);
-        Setup();
-        DrawVisibleGeometry(useDynamicBatching, useGPUInstancing);
-        DrawUnsupportedShaders();
-        DrawGizmos();
-        _lighting.Cleanup();
-        Submit();
-    }
+	static Material errorMaterial;
 
-    void Setup()
-    {
-        _context.SetupCameraProperties(_camera);
-        _buffer.ClearRenderTarget(true, true, Color.clear);
-        _buffer.BeginSample(SampleName);
-        ExecuteBuffer();
-    }
-    
-    
+	string SampleName { get; set; }
 
-    bool Cull(float maxShadowDistance)
-    {
-        if (_camera.TryGetCullingParameters(out ScriptableCullingParameters parameters))
-        {
-            parameters.shadowDistance = Mathf.Min(maxShadowDistance, _camera.farClipPlane);
-            _cullingResults = _context.Cull(ref parameters);
-            return true;
-        }
+	partial void DrawGizmos () {
+		if (Handles.ShouldRenderGizmos()) {
+			context.DrawGizmos(camera, GizmoSubset.PreImageEffects);
+			context.DrawGizmos(camera, GizmoSubset.PostImageEffects);
+		}
+	}
 
-        return false;
-    }
+	partial void DrawUnsupportedShaders () {
+		if (errorMaterial == null) {
+			errorMaterial =
+				new Material(Shader.Find("Hidden/InternalErrorShader"));
+		}
+		var drawingSettings = new DrawingSettings(
+			legacyShaderTagIds[0], new SortingSettings(camera)
+		) {
+			overrideMaterial = errorMaterial
+		};
+		for (int i = 1; i < legacyShaderTagIds.Length; i++) {
+			drawingSettings.SetShaderPassName(i, legacyShaderTagIds[i]);
+		}
+		var filteringSettings = FilteringSettings.defaultValue;
+		context.DrawRenderers(
+			cullingResults, ref drawingSettings, ref filteringSettings
+		);
+	}
 
-    void DrawVisibleGeometry(bool useDynamicBatching, bool useGPUInstancing)
-    {
-        var sortingSettings = new SortingSettings(_camera)
-        {
-            criteria = SortingCriteria.CommonOpaque
-        };
-        var drawingSettings = new DrawingSettings(
-            unlitShaderTagId, sortingSettings)
-        {
-            enableDynamicBatching = useDynamicBatching,
-            enableInstancing = useGPUInstancing
-        };
-        drawingSettings.SetShaderPassName(1, litShaderTagId);
-        var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
-        
-        _context.DrawRenderers(
-            _cullingResults, ref drawingSettings, ref filteringSettings);
-        
-        _context.DrawSkybox(_camera);
+	partial void PrepareForSceneWindow () {
+		if (camera.cameraType == CameraType.SceneView) {
+			ScriptableRenderContext.EmitWorldGeometryForSceneView(camera);
+		}
+	}
 
-        sortingSettings.criteria = SortingCriteria.CommonTransparent;
-        drawingSettings.sortingSettings = sortingSettings;
-        filteringSettings.renderQueueRange = RenderQueueRange.transparent;
-        
-        _context.DrawRenderers(_cullingResults, ref drawingSettings, ref filteringSettings);
-    }
+	partial void PrepareBuffer () {
+		Profiler.BeginSample("Editor Only");
+		buffer.name = SampleName = camera.name;
+		Profiler.EndSample();
+	}
 
-    
+#else
 
-    void Submit()
-    {
-        _buffer.EndSample(SampleName);
-        ExecuteBuffer();
-        _context.Submit();
-    }
+	const string SampleName = bufferName;
 
-    void ExecuteBuffer()
-    {
-        _context.ExecuteCommandBuffer(_buffer);
-        _buffer.Clear();
-    }
+#endif
 }
