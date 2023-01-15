@@ -191,13 +191,13 @@ public class Shadows
     {
         ShadowedDirectionalLight light = shadowedDirectionalLights[index];
         var shadowSettings =
-            new ShadowDrawingSettings(cullingResults, light.visibleLightIndex);
+            new ShadowDrawingSettings(cullingResults, light.visibleLightIndex, BatchCullingProjectionType.Orthographic);
         int cascadeCount = settings.directional.cascadeCount;
         int tileOffset = index * cascadeCount;
         Vector3 ratios = settings.directional.CascadeRatios;
         float cullingFactor =
             Mathf.Max(0f, 0.8f - settings.directional.cascadeFade);
-
+        
         for (int i = 0; i < cascadeCount; i++)
         {
             cullingResults.ComputeDirectionalShadowMatricesAndCullingPrimitives(
@@ -205,6 +205,7 @@ public class Shadows
                 light.nearPlaneOffset, out Matrix4x4 viewMatrix,
                 out Matrix4x4 projectionMatrix, out ShadowSplitData splitData
             );
+            // The value is a factor that modulates the radius of the previous cascade used to perform the culling
             splitData.shadowCascadeBlendCullingFactor = cullingFactor;
             shadowSettings.splitData = splitData;
             if (index == 0)
@@ -218,6 +219,8 @@ public class Shadows
                 SetTileViewport(tileIndex, split, tileSize), split
             );
             buffer.SetViewProjectionMatrices(viewMatrix, projectionMatrix);
+            
+            // slope-scale bias is used to scale the highest of the absolute clip space depth derivative along the X and Y dimensions
             buffer.SetGlobalDepthBias(0f, light.slopeScaleBias);
             ExecuteBuffer();
             context.DrawShadows(ref shadowSettings);
@@ -228,11 +231,15 @@ public class Shadows
     void SetCascadeData(int index, Vector4 cullingSphere, float tileSize)
     {
         // cullingSphere.w is sphere's radius 
-        float texelSize = 2f * cullingSphere.w / tileSize;
+        float texelSize = 2f * cullingSphere.w / tileSize;      // sphere's diameter / tileSize
         float filterSize = texelSize * ((float)settings.directional.filter + 1f);
+        // when use PCF, the sample region increases, which means we can end up sampling outside of the cascade's culling sphere
+        // we can avoid that by reducing the sphere's radius
         cullingSphere.w -= filterSize;
         cullingSphere.w *= cullingSphere.w;                // use square radius to compare radiance
         cascadeCullingSpheres[index] = cullingSphere;
+        // sqrt(2) is 1.4142136, because texels are squares
+        // in the worst case, we have to offset along the square's diagonal
         cascadeData[index] = new Vector4(
             1f / cullingSphere.w,
             filterSize * 1.4142136f

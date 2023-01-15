@@ -35,7 +35,7 @@ public class ShadowSettings {
 			new Vector3(cascadeRatio1, cascadeRatio2, cascadeRatio3);
 
 		[Range(0.001f, 1f)]
-		public float cascadeFade;
+		public float cascadeFade;           // fade shadows at the edge of the last cascade
 
 		public enum CascadeBlendMode {
 			Hard, Soft, Dither

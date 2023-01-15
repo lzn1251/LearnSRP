@@ -37,24 +37,32 @@ struct ShadowData {
 	float strength;
 };
 
+// use the function (1 - d/m) /f clamped to 0-1 to make shadow transition smoother
+// d is the surface depth, m is the max shadow distance, f is the fade range
+// There, we give 1/m as scale, 1/f as fade to call the function
 float FadedShadowStrength (float distance, float scale, float fade) {
 	return saturate((1.0 - distance * scale) * fade);
 }
 
+// use world-space surface to determine which cascade
 ShadowData GetShadowData (Surface surfaceWS) {
 	ShadowData data;
 	data.cascadeBlend = 1.0;
+	// fade shadows
 	data.strength = FadedShadowStrength(
 		surfaceWS.depth, _ShadowDistanceFade.x, _ShadowDistanceFade.y
-	);
+	);      
 	int i;
 	for (i = 0; i < _CascadeCount; i++) {
 		float4 sphere = _CascadeCullingSpheres[i];
 		float distanceSqr = DistanceSquared(surfaceWS.position, sphere.xyz);
 		if (distanceSqr < sphere.w) {
+			// fade cascades
 			float fade = FadedShadowStrength(
 				distanceSqr, _CascadeData[i].x, _ShadowDistanceFade.z
 			);
+
+			// in the last cascade
 			if (i == _CascadeCount - 1) {
 				data.strength *= fade;
 			}
@@ -62,13 +70,15 @@ ShadowData GetShadowData (Surface surfaceWS) {
 				data.cascadeBlend = fade;
 			}
 			break;
-		}
+		} 
 	}
-	
+
+	// outside all cascade shadow map
 	if (i == _CascadeCount) {
 		data.strength = 0.0;
 	}
 	#if defined(_CASCADE_BLEND_DITHER)
+	// not in the last cascade 
 		else if (data.cascadeBlend < surfaceWS.dither) {
 			i += 1;
 		}
@@ -126,6 +136,7 @@ float GetDirectionalShadowAttenuation (
 		float4(surfaceWS.position + normalBias, 1.0)
 	).xyz;
 	float shadow = FilterDirectionalShadow(positionSTS);
+	// blend between cascades
 	if (global.cascadeBlend < 1.0) {
 		normalBias = surfaceWS.normal *
 			(directional.normalBias * _CascadeData[global.cascadeIndex + 1].y);

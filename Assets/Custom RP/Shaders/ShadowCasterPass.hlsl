@@ -31,6 +31,8 @@ Varyings ShadowCasterPassVertex (Attributes input) {
 	float3 positionWS = TransformObjectToWorld(input.positionOS);
 	output.positionCS = TransformWorldToHClip(positionWS);
 
+	// clamp the vertex positions to the near plane
+	// use for shadow casters that lie in front of the near plane
 	#if UNITY_REVERSED_Z
 		output.positionCS.z =
 			min(output.positionCS.z, output.positionCS.w * UNITY_NEAR_CLIP_VALUE);
