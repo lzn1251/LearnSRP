@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1827704365}
   m_IndirectSpecularColor: {r: 0.18028381, g: 0.22571406, b: 0.30692294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -174,6 +174,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &24330831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -296,6 +297,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &81849571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -418,6 +420,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &86628865
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -540,6 +543,7 @@ MonoBehaviour:
   alphaCutoff: 0.239
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &129906875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -662,6 +666,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.71
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &183205300
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -784,6 +789,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.693
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &193793423
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -906,6 +912,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &197213227
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1028,6 +1035,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.71
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &208720050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1150,6 +1158,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0.916
   smoothness: 0.803
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &238021176
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1272,6 +1281,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &257287891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1394,6 +1404,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &281990837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1516,6 +1527,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &323518569
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1638,6 +1650,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &386627684
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1760,6 +1773,7 @@ MonoBehaviour:
   alphaCutoff: 0.298
   metallic: 0
   smoothness: 0.727
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &392214004
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1882,6 +1896,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &394114523
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2004,6 +2019,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0.172993, g: 1.6580433, b: 0.05318241, a: 1}
 --- !u!65 &402758813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2126,6 +2142,7 @@ MonoBehaviour:
   alphaCutoff: 0.357
   metallic: 0.353
   smoothness: 0.609
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &456890952
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2248,6 +2265,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0.756
   smoothness: 0.517
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &469438231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2430,6 +2448,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &486369775
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2552,6 +2571,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &488893371
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2674,6 +2694,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &503827033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2796,6 +2817,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 2.6903756, g: 2.5043194, b: 1.6599109, a: 1}
 --- !u!65 &506774199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2918,6 +2940,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &589406073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3040,6 +3063,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.66
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &627520765
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3162,6 +3186,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 1
   smoothness: 0.458
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &671691706
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3284,6 +3309,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &677790564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3406,6 +3432,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &751388137
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3528,6 +3555,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.769
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &787424979
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3650,6 +3678,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &880421924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3772,6 +3801,7 @@ MonoBehaviour:
   alphaCutoff: 0.08
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &882786464
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3894,6 +3924,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &931021221
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4016,6 +4047,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &976987300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4138,6 +4170,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1010657113
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4260,6 +4293,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1010835512
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4382,6 +4416,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1038871284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4489,6 +4524,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!64 &1147356142
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4627,6 +4663,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.643
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1210159360
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4749,6 +4786,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.664
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1214361337
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4871,6 +4909,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1229124377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4993,6 +5032,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 1.999966, g: 1.6648933, b: 0, a: 1}
 --- !u!65 &1278769622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5166,6 +5206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298575246}
   - component: {fileID: 1298575245}
+  - component: {fileID: 1298575247}
   m_Layer: 0
   m_Name: Mesh Ball
   m_TagString: Untagged
@@ -5185,8 +5226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4e5bddc090f46f8acfc6475bf68617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: 0}
-  material: {fileID: 0}
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 9ce407b9b7d2c47128e7fe8386a3b5ab, type: 2}
+  lightProbeVolume: {fileID: 1298575247}
 --- !u!4 &1298575246
 Transform:
   m_ObjectHideFlags: 0
@@ -5202,6 +5244,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!259 &1298575247
+LightProbeProxyVolume:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298575244}
+  m_Enabled: 1
+  m_BoundingBoxMode: 2
+  m_ResolutionX: 2
+  m_ResolutionY: 2
+  m_ResolutionZ: 2
+  m_ResolutionProbesPerUnit: 0.25
+  m_BoundingBoxSize: {x: 20, y: 20, z: 20}
+  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
+  m_ResolutionMode: 0
+  m_ProbePositionMode: 0
+  m_RefreshMode: 0
+  m_QualityMode: 1
+  m_DataFormat: 1
 --- !u!1 &1337074240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,6 +5315,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1337074243
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5449,6 +5512,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1377748384
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5571,6 +5635,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.433
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1377994078
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5693,6 +5758,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1398528666
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5815,6 +5881,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.819
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1413321703
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5937,6 +6004,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1470867324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6059,6 +6127,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 1
   smoothness: 0.567
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1486722734
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6181,6 +6250,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0.104710236, g: 1.5711894, b: 1.999966, a: 1}
 --- !u!65 &1489623839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6303,6 +6373,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1494252395
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6425,6 +6496,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 2.6700659, g: 0.6011144, b: 0.6710114, a: 1}
 --- !u!65 &1503206535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6547,6 +6619,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.651
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1530014753
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6669,6 +6742,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1544681262
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6791,6 +6865,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1622791773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6913,6 +6988,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.769
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1635014181
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7035,6 +7111,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.718
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1636974482
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7157,6 +7234,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.777
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1671749655
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7279,6 +7357,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1682252167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7401,6 +7480,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1700854410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7649,6 +7729,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.651
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1715367932
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7771,6 +7852,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1727175491
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7893,6 +7975,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.735
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1734071899
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8015,6 +8098,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1736422231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8137,6 +8221,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.794
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1768553600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8259,6 +8344,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1771882116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8398,7 +8484,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -8475,6 +8561,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1911510368
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8597,6 +8684,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1930632950
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8719,6 +8807,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1931762206
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8841,6 +8930,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1942641203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9089,6 +9179,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1986188539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9211,6 +9302,7 @@ MonoBehaviour:
   alphaCutoff: 0.475
   metallic: 0
   smoothness: 0.324
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &1993912367
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9333,6 +9425,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2027800348
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9565,6 +9658,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2036009339
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9687,6 +9781,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2041335858
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9809,6 +9904,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &2046720926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9931,6 +10027,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.676
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2064857897
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10053,6 +10150,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &2092127102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10175,6 +10273,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 1
   smoothness: 0.282
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2106094930
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10297,6 +10396,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!135 &2107554068
 SphereCollider:
   m_ObjectHideFlags: 0
