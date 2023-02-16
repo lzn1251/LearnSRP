@@ -31,3 +31,4 @@ MonoBehaviour:
       cascadeRatio3: 0.5
       cascadeFade: 0.1
       cascadeBlend: 1
+  postFXSettings: {fileID: 11400000, guid: 4edc91fedd3c9f4488583ae0028ca580, type: 2}
