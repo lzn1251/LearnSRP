@@ -68,8 +68,8 @@ float4 BloomAddPassFragment(Varyings input) : SV_TARGET {
     {
         lowRes = GetSource(input.screenUV).rgb;
     }
-    float3 highRes = GetSource2(input.screenUV).rgb;
-    return float4(lowRes * _BloomIntensity + highRes, 1.0);
+    float4 highRes = GetSource2(input.screenUV);           // preserve transparency
+    return float4(lowRes * _BloomIntensity + highRes.rgb, highRes.a);
 }
 
 float4 BloomHorizontalPassFragment(Varyings input) : SV_TARGET {
@@ -150,9 +150,9 @@ float4 BloomScatterFinalPassFragment (Varyings input) : SV_TARGET {
     else {
         lowRes = GetSource(input.screenUV).rgb;
     }
-    float3 highRes = GetSource2(input.screenUV).rgb;
-    lowRes += highRes - ApplyBloomThreshold(highRes);          // add the missing light to the low-resolution pass
-    return float4(lerp(highRes, lowRes, _BloomIntensity), 1.0);
+    float4 highRes = GetSource2(input.screenUV);                       // preserve transparency
+    lowRes += highRes.rgb - ApplyBloomThreshold(highRes.rgb);          // add the missing light to the low-resolution pass
+    return float4(lerp(highRes.rgb, lowRes, _BloomIntensity), highRes.a);
 }
 
 float4 BloomVerticalPassFragment(Varyings input) : SV_TARGET {
