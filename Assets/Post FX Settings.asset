@@ -41,12 +41,12 @@ MonoBehaviour:
     green: {x: 0, y: 1, z: 0}
     blue: {x: 0, y: 0, z: 1}
   shadowsMidtonesHighlights:
-    shadows: {r: 0.7490196, g: 0.6156863, b: 1, a: 1}
-    midtones: {r: 1, g: 0.8509804, b: 0.8509804, a: 1}
-    highlights: {r: 1, g: 0.89411765, b: 0.7921569, a: 1}
+    shadows: {r: 1, g: 1, b: 1, a: 1}
+    midtones: {r: 1, g: 1, b: 1, a: 1}
+    highlights: {r: 1, g: 1, b: 1, a: 1}
     shadowsStart: 0
     shadowsEnd: 0.3
     highlightsStart: 0.55
     highLightsEnd: 1
   toneMapping:
-    mode: 1
+    mode: 0

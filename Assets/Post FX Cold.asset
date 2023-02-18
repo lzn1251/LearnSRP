@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f2de1d95a7a4c9bbfaba83fa94b4fa3, type: 3}
-  m_Name: NPost FX Cold
+  m_Name: Post FX Cold
   m_EditorClassIdentifier: 
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: 6e69a01a33944d3dab24a6855f7029dc, type: 3}
   bloom:
-    maxIterations: 0
-    downScaleLimit: 0
-    bicubicUpsampling: 0
-    threshold: 0
-    thresholdKnee: 0
-    intensity: 0
-    fadeFireflies: 0
-    mode: 0
+    maxIterations: 16
+    downScaleLimit: 2
+    bicubicUpsampling: 1
+    threshold: 1
+    thresholdKnee: 0.5
+    intensity: 0.2
+    fadeFireflies: 1
+    mode: 1
     scatter: 0.7
   colorAdjustments:
     postExposure: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
     hueShift: 0
     saturation: 0
   whiteBalance:
-    temperature: 0
+    temperature: -50
     tint: 0
   splitToning:
     shadows: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -49,4 +49,4 @@ MonoBehaviour:
     highlightsStart: 0.55
     highLightsEnd: 1
   toneMapping:
-    mode: 0
+    mode: 2

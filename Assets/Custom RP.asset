@@ -16,6 +16,12 @@ MonoBehaviour:
   useGPUInstancing: 1
   useSRPBatcher: 1
   useLightsPerObject: 0
+  cameraBufferSettings:
+    allowHDR: 1
+    copyColor: 1
+    copyColorReflection: 0
+    copyDepth: 1
+    copyDepthReflections: 0
   shadows:
     maxDistance: 30
     distanceFade: 0.1
@@ -32,3 +38,6 @@ MonoBehaviour:
       cascadeFade: 0.1
       cascadeBlend: 1
   postFXSettings: {fileID: 11400000, guid: 4edc91fedd3c9f4488583ae0028ca580, type: 2}
+  colorLUTResolution: 32
+  cameraRendererShader: {fileID: 4800000, guid: a799e6243a1a40048e2d2edc0e3db190,
+    type: 3}

@@ -91,7 +91,7 @@ public class CustomShaderGUI : ShaderGUI {
 			mainTex.textureScaleAndOffset = baseMap.textureScaleAndOffset;
 		}
 
-		MaterialProperty color = FindProperty("_Color", properties);
+		MaterialProperty color = FindProperty("_Color", properties, false);
 		MaterialProperty baseColor =
 			FindProperty("_BaseColor", properties, false);
 		if (color != null && baseColor != null)

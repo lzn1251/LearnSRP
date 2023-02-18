@@ -40,7 +40,10 @@ float4x4 glstate_matrix_projection;
 
 float3 _WorldSpaceCameraPos;
 
+float4 unity_OrthoParams;
 float4 _ProjectionParams;  // X -- indicates whether a manual flip is needed
+float4 _ScreenParams;
+float4 _ZBufferParams;
 
 float4x4 unity_PrevObjectToWorld;
 float4x4 unity_PrevWorldToObject;
